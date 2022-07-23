@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.css'
+import Land from './components/Land/Land';
+import Score from './components/Score/Score'
 
 function App() {
+  const [yourscore,setYourScore] = useState(0)
+  const [botscore,setBotScore] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Score yourscore={yourscore} botscore={botscore}/>
+      <Land setYourScore={setYourScore} yourscore={yourscore} botscore={botscore} setBotScore={setBotScore}/>
     </div>
   );
 }
